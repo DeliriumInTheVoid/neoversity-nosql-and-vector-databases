@@ -1,0 +1,30 @@
+services:
+  mongo:
+    image: mongo:7.0
+    container_name: nosql_01_mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    volumes:
+      - mongo_data:/data/db
+      - ./:/workspace:ro
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "mongosh",
+          "mongodb://root:example@localhost:27017/admin?authSource=admin",
+          "--quiet",
+          "--eval",
+          "db.adminCommand('ping').ok"
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+volumes:
+  mongo_data:

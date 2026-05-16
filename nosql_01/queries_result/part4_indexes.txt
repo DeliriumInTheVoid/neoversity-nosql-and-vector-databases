@@ -1,0 +1,288 @@
+=== Task 1. Query before and after compound index ===
+
+Before index
+{
+  nReturned: 354,
+  totalKeysExamined: 0,
+  totalDocsExamined: 113999,
+  executionTimeMillis: 75,
+  winningStages: [
+    'SORT',
+    'COLLSCAN'
+  ],
+  indexesUsed: [],
+  winningPlan: {
+    isCached: false,
+    stage: 'SORT',
+    sortPattern: {
+      popularity: -1
+    },
+    memLimit: 33554432,
+    type: 'simple',
+    inputStage: {
+      stage: 'COLLSCAN',
+      filter: {
+        '$and': [
+          {
+            track_genre: {
+              '$eq': 'pop'
+            }
+          },
+          {
+            'audio_features.danceability': {
+              '$gte': 0.7
+            }
+          }
+        ]
+      },
+      direction: 'forward'
+    }
+  }
+}
+
+After index
+{
+  nReturned: 354,
+  totalKeysExamined: 412,
+  totalDocsExamined: 354,
+  executionTimeMillis: 2,
+  winningStages: [
+    'FETCH',
+    'IXSCAN'
+  ],
+  indexesUsed: [
+    'idx_tracks_genre_popularity_danceability'
+  ],
+  winningPlan: {
+    isCached: false,
+    stage: 'FETCH',
+    inputStage: {
+      stage: 'IXSCAN',
+      keyPattern: {
+        track_genre: 1,
+        popularity: -1,
+        'audio_features.danceability': 1
+      },
+      indexName: 'idx_tracks_genre_popularity_danceability',
+      isMultiKey: false,
+      multiKeyPaths: {
+        track_genre: [],
+        popularity: [],
+        'audio_features.danceability': []
+      },
+      isUnique: false,
+      isSparse: false,
+      isPartial: false,
+      indexVersion: 2,
+      direction: 'forward',
+      indexBounds: {
+        track_genre: [
+          '["pop", "pop"]'
+        ],
+        popularity: [
+          '[MaxKey, MinKey]'
+        ],
+        'audio_features.danceability': [
+          '[0.7, inf.0]'
+        ]
+      }
+    }
+  }
+}
+
+=== Task 2. Work music compound index ===
+
+Before work-music index
+{
+  nReturned: 16141,
+  totalKeysExamined: 0,
+  totalDocsExamined: 113999,
+  executionTimeMillis: 143,
+  winningStages: [
+    'COLLSCAN'
+  ],
+  indexesUsed: [],
+  winningPlan: {
+    isCached: false,
+    stage: 'COLLSCAN',
+    filter: {
+      '$and': [
+        {
+          explicit: {
+            '$eq': false
+          }
+        },
+        {
+          'audio_features.speechiness': {
+            '$lt': 0.1
+          }
+        },
+        {
+          'audio_features.instrumentalness': {
+            '$gt': 0.5
+          }
+        }
+      ]
+    },
+    direction: 'forward'
+  }
+}
+
+After work-music index
+{
+  nReturned: 16141,
+  totalKeysExamined: 16602,
+  totalDocsExamined: 16141,
+  executionTimeMillis: 35,
+  winningStages: [
+    'FETCH',
+    'IXSCAN'
+  ],
+  indexesUsed: [
+    'idx_tracks_work_music'
+  ],
+  winningPlan: {
+    isCached: false,
+    stage: 'FETCH',
+    inputStage: {
+      stage: 'IXSCAN',
+      keyPattern: {
+        explicit: 1,
+        'audio_features.instrumentalness': -1,
+        'audio_features.speechiness': 1
+      },
+      indexName: 'idx_tracks_work_music',
+      isMultiKey: false,
+      multiKeyPaths: {
+        explicit: [],
+        'audio_features.instrumentalness': [],
+        'audio_features.speechiness': []
+      },
+      isUnique: false,
+      isSparse: false,
+      isPartial: false,
+      indexVersion: 2,
+      direction: 'forward',
+      indexBounds: {
+        explicit: [
+          '[false, false]'
+        ],
+        'audio_features.instrumentalness': [
+          '[inf.0, 0.5)'
+        ],
+        'audio_features.speechiness': [
+          '[-inf.0, 0.1)'
+        ]
+      }
+    }
+  }
+}
+
+=== Task 3. Covered query check ===
+
+Original query without projection
+{
+  nReturned: 317,
+  totalKeysExamined: 317,
+  totalDocsExamined: 317,
+  executionTimeMillis: 0,
+  winningStages: [
+    'FETCH',
+    'IXSCAN'
+  ],
+  indexesUsed: [
+    'idx_tracks_genre_popularity_danceability'
+  ],
+  winningPlan: {
+    isCached: false,
+    stage: 'FETCH',
+    inputStage: {
+      stage: 'IXSCAN',
+      keyPattern: {
+        track_genre: 1,
+        popularity: -1,
+        'audio_features.danceability': 1
+      },
+      indexName: 'idx_tracks_genre_popularity_danceability',
+      isMultiKey: false,
+      multiKeyPaths: {
+        track_genre: [],
+        popularity: [],
+        'audio_features.danceability': []
+      },
+      isUnique: false,
+      isSparse: false,
+      isPartial: false,
+      indexVersion: 2,
+      direction: 'forward',
+      indexBounds: {
+        track_genre: [
+          '["pop", "pop"]'
+        ],
+        popularity: [
+          '[inf.0, 70]'
+        ],
+        'audio_features.danceability': [
+          '[MinKey, MaxKey]'
+        ]
+      }
+    }
+  }
+}
+
+Covered variant with projection
+{
+  nReturned: 317,
+  totalKeysExamined: 317,
+  totalDocsExamined: 0,
+  executionTimeMillis: 0,
+  winningStages: [
+    'PROJECTION_DEFAULT',
+    'IXSCAN'
+  ],
+  indexesUsed: [
+    'idx_tracks_genre_popularity_danceability'
+  ],
+  winningPlan: {
+    isCached: false,
+    stage: 'PROJECTION_DEFAULT',
+    transformBy: {
+      _id: 0,
+      track_genre: 1,
+      popularity: 1,
+      'audio_features.danceability': 1
+    },
+    inputStage: {
+      stage: 'IXSCAN',
+      keyPattern: {
+        track_genre: 1,
+        popularity: -1,
+        'audio_features.danceability': 1
+      },
+      indexName: 'idx_tracks_genre_popularity_danceability',
+      isMultiKey: false,
+      multiKeyPaths: {
+        track_genre: [],
+        popularity: [],
+        'audio_features.danceability': []
+      },
+      isUnique: false,
+      isSparse: false,
+      isPartial: false,
+      indexVersion: 2,
+      direction: 'forward',
+      indexBounds: {
+        track_genre: [
+          '["pop", "pop"]'
+        ],
+        popularity: [
+          '[inf.0, 70]'
+        ],
+        'audio_features.danceability': [
+          '[MinKey, MaxKey]'
+        ]
+      }
+    }
+  }
+}
+The original query is not covered because it returns full documents. A covered query must filter and project only indexed fields and exclude _id unless _id is in the index.
