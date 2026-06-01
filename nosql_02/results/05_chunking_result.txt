@@ -1,0 +1,118 @@
+Selected 30 articles with the longest abstracts.
+Longest abstract word counts: [338, 318, 314, 313, 312, 312, 312, 312, 311, 311]
+Using device: cuda
+CUDA device: NVIDIA GeForce RTX 5090
+Loading model: .\nosql_02\assets\specter2_base
+No sentence-transformers model found with name .\nosql_02\assets\specter2_base. Creating a new one with mean pooling.
+Creating Pinecone index 'arxiv-chunks-fixed' in aws/us-east-1...
+Creating Pinecone index 'arxiv-chunks-semantic' in aws/us-east-1...
+Fixed-size chunks created: 117
+Semantic chunks created: 96
+Batches: 100%|█████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  2.46it/s]
+Batches: 100%|█████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00<00:00,  7.94it/s]
+Uploading fixed-size chunks: 100%|█████████████████████████████████████████████████████████████████████| 1/1 [00:02<00:00,  2.17s/it]
+Uploading semantic chunks: 100%|███████████████████████████████████████████████████████████████████████| 1/1 [00:02<00:00,  2.10s/it]
+Total vectors in 'arxiv-chunks-fixed': 117
+Total vectors in 'arxiv-chunks-semantic': 96
+
+Fixed-size chunks search: gamma ray bursts and supernova explosions
+1. High energy afterglows and flares from Gamma-Ray Burst by Inverse Compton emission
+   score=0.8477 | chunk=0.0 | category=astro-ph | year=2007.0
+   We perform a detailed study of inverse Compton (IC) emission for a fireball undergoing external shock (ES) in either a uniform or a wind-like interstellar medium, and assess the relative importance of IC and synchrotron emissions. We determine the primary model parameters driving the IC to synchrotron emission ratio in the case of a short duration ...
+2. The SN 1987A Link to Gamma-Ray Bursts
+   score=0.8315 | chunk=3.0 | category=astro-ph | year=2007.0
+   Ia's strongly suggest that these are also DD, implying another systematic effect in Ia Cosmology, as Ia's will appear to be Ic's when viewed from their DD merger poles, given sufficient matter above that lost to core- collapse (otherwise it would just beg the question of what ELSE they could possibly be). There is no need to invent exotica, such as...
+3. The SN 1987A Link to Gamma-Ray Bursts
+   score=0.8249 | chunk=1.0 | category=astro-ph | year=2007.0
+   1987A strongly suggest that it resulted from a merger of 2 stellar cores of a common envelope (CE) binary, i.e. a "double-degenerate" (DD)-initiated SN, and is thus the Rosetta Stone for 99% of MSPs in the non-core-collapsed globular clusters, GRBs, and SNe, including all recent nearby SNe except SN 1986J and the more distant SN 2006gy. Without hav...
+4. High energy afterglows and flares from Gamma-Ray Burst by Inverse Compton emission
+   score=0.8246 | chunk=1.0 | category=astro-ph | year=2007.0
+   light curves. We present model predictions, in particular in terms of GeV vs X-ray behavior, and compare them with other models proposed to explain the origin of flares. We find that if most of the emission occurs when the fireball is in the fast cooling regime, then a substantial GeV emission is expected both for a short (standard ES) and a long (...
+5. High energy afterglows and flares from Gamma-Ray Burst by Inverse Compton emission
+   score=0.8115 | chunk=3.0 | category=astro-ph | year=2007.0
+   both flares need to fall below or within the observational bands. We predict that X-ray flares with peak energy of ~10 eV produce high energy flares with peak energy of around 100 MeV-GeV. Observations by Swift and GLAST then, can test the predicted simultaneity....
+
+Semantic chunks search: gamma ray bursts and supernova explosions
+1. The SN 1987A Link to Gamma-Ray Bursts
+   score=0.8797 | chunk=3.0 | category=astro-ph | year=2007.0
+   There is no need to invent exotica, such as collapsars or hypernovae, to account for GRBs....
+2. High energy afterglows and flares from Gamma-Ray Burst by Inverse Compton emission
+   score=0.8500 | chunk=0.0 | category=astro-ph | year=2007.0
+   We perform a detailed study of inverse Compton (IC) emission for a fireball undergoing external shock (ES) in either a uniform or a wind-like interstellar medium, and assess the relative importance of IC and synchrotron emissions. We determine the primary model parameters driving the IC to synchrotron emission ratio in the case of a short duration ...
+3. The SN 1987A Link to Gamma-Ray Bursts
+   score=0.8445 | chunk=1.0 | category=astro-ph | year=2007.0
+   a "double-degenerate" (DD)-initiated SN, and is thus the Rosetta Stone for 99% of MSPs in the non-core-collapsed globular clusters, GRBs, and SNe, including all recent nearby SNe except SN 1986J and the more distant SN 2006gy. Without having to blast through the CE of Sk -69 202, it is likely that the BJ would have caused a full, long-soft gamma-ra...
+4. High energy afterglows and flares from Gamma-Ray Burst by Inverse Compton emission
+   score=0.8252 | chunk=1.0 | category=astro-ph | year=2007.0
+   We find that if most of the emission occurs when the fireball is in the fast cooling regime, then a substantial GeV emission is expected both for a short (standard ES) and a long (DES) duration central engine activity. In particular, in the context of standard ES we are able to account for the delayed emission observed in GRB940217. In the case of ...
+5. The SN 1987A Link to Gamma-Ray Bursts
+   score=0.8133 | chunk=2.0 | category=astro-ph | year=2007.0
+   Because DD must be the dominant SN mechanism in elliptical galaxies, where only short, hard GRBs (sGRBs) have been observed, DD without CE or PE must also make sGRBs, thus the initial photon spectrum of 99% of ALL GRBs is KNOWN, & neutron star (NS)-NS mergers may not make GRBs as we know them. Observations of Ia's strongly suggest that these are al...
+
+Fixed-size chunks search: neutron stars and x ray timing observations
+1. X-ray Timing of PSR J1852+0040 in Kesteven 79: Evidence of Neutron Stars Weakly Magnetized at Birth
+   score=0.8351 | chunk=3.0 | category=astro-ph | year=2007.0
+   < 1e11 G and P > 0.1 s from radio pulsar surveys, where B_p < 1e11 G is not encountered except among very old (tau_c > 40 Myr) or recycled pulsars. Finally, such a CCO, if born in SN 1987A, could explain the non-detection of a pulsar there....
+2. Evolution of Magnetic Fields in Stars Across the Upper Main Sequence: II. Observed distribution of the magnetic field geometry
+   score=0.8237 | chunk=3.0 | category=astro-ph | year=2007.0
+   for stars with M > 3 M_sun, no similar trend is found for stars with M < 3 M_sun. However, the predominance of high values of beta at advanced ages in these stars is notable....
+3. CIV 1549 as an Eigenvector 1 Parameter for Active Galactic Nuclei
+   score=0.8226 | chunk=3.0 | category=astro-ph | year=2007.0
+   the latter show different and nonlinear offsets for population A and B sources. A significant number of sources also show narrow line CIV 1549 emission. We present a recipe for CIV 1549 narrow component extraction....
+4. High energy afterglows and flares from Gamma-Ray Burst by Inverse Compton emission
+   score=0.8114 | chunk=3.0 | category=astro-ph | year=2007.0
+   both flares need to fall below or within the observational bands. We predict that X-ray flares with peak energy of ~10 eV produce high energy flares with peak energy of around 100 MeV-GeV. Observations by Swift and GLAST then, can test the predicted simultaneity....
+5. The SN 1987A Link to Gamma-Ray Bursts
+   score=0.8113 | chunk=3.0 | category=astro-ph | year=2007.0
+   Ia's strongly suggest that these are also DD, implying another systematic effect in Ia Cosmology, as Ia's will appear to be Ic's when viewed from their DD merger poles, given sufficient matter above that lost to core- collapse (otherwise it would just beg the question of what ELSE they could possibly be). There is no need to invent exotica, such as...
+
+Semantic chunks search: neutron stars and x ray timing observations
+1. The SN 1987A Link to Gamma-Ray Bursts
+   score=0.8267 | chunk=3.0 | category=astro-ph | year=2007.0
+   There is no need to invent exotica, such as collapsars or hypernovae, to account for GRBs....
+2. New flaring of an ultraluminous X-ray source in NGC 1365
+   score=0.8122 | chunk=3.0 | category=astro-ph | year=2007.0
+   Based on X-ray luminosity and spectral arguments, we suggest that this accreting black hole has a likely mass ~ 50-150 Msun (even without accounting for possible beaming)....
+3. X-ray Timing of PSR J1852+0040 in Kesteven 79: Evidence of Neutron Stars Weakly Magnetized at Birth
+   score=0.8076 | chunk=2.0 | category=astro-ph | year=2007.0
+   We propose this origin of radio-quiet CCOs: the B-field, derived from a turbulent dynamo, is weaker if the NS is formed spinning slowly, which enables it to accrete SN debris. Accretion excludes neutron stars born with both B_p < 1e11 G and P > 0.1 s from radio pulsar surveys, where B_p < 1e11 G is not encountered except among very old (tau_c > 40 ...
+4. Observations towards early-type stars in the ESO-POP survey: II -- searches for intermediate and high velocity clouds
+   score=0.8016 | chunk=3.0 | category=astro-ph | year=2007.0
+   The non-detection of CaII K absorption sets a lower distance of 3.2-kpc towards the HVC, which is unsurprising if this feature is indeed related to the Magellanic System....
+5. The SN 1987A Link to Gamma-Ray Bursts
+   score=0.7998 | chunk=1.0 | category=astro-ph | year=2007.0
+   a "double-degenerate" (DD)-initiated SN, and is thus the Rosetta Stone for 99% of MSPs in the non-core-collapsed globular clusters, GRBs, and SNe, including all recent nearby SNe except SN 1986J and the more distant SN 2006gy. Without having to blast through the CE of Sk -69 202, it is likely that the BJ would have caused a full, long-soft gamma-ra...
+
+Fixed-size chunks search: machine learning methods for scientific data
+1. Geochemistry of U and Th and its Influence on the Origin and Evolution of the Crust of Earth and the Biological Evolution
+   score=0.7988 | chunk=3.0 | category=physics.geo-ph | year=2007.0
+   believe that a comprehensive exploration on energy sources and their evolution is a good way to build bridges between different disciplines of science in order to better understand the Earth and planets....
+2. CIV 1549 as an Eigenvector 1 Parameter for Active Galactic Nuclei
+   score=0.7862 | chunk=3.0 | category=astro-ph | year=2007.0
+   the latter show different and nonlinear offsets for population A and B sources. A significant number of sources also show narrow line CIV 1549 emission. We present a recipe for CIV 1549 narrow component extraction....
+3. Geochemistry of U and Th and its Influence on the Origin and Evolution of the Crust of Earth and the Biological Evolution
+   score=0.7823 | chunk=2.0 | category=physics.geo-ph | year=2007.0
+   reason, a plate tectonic system can not been developed in these planets. We also emphasize the influence of U and Th in EZ on the development and evolution of life on Earth. We propose that since the Earth and planets were born in a united solar system, there should be some common mechanisms to create the similarities and differences between them. ...
+4. Evolution of Magnetic Fields in Stars Across the Upper Main Sequence: II. Observed distribution of the magnetic field geometry
+   score=0.7725 | chunk=3.0 | category=astro-ph | year=2007.0
+   for stars with M > 3 M_sun, no similar trend is found for stars with M < 3 M_sun. However, the predominance of high values of beta at advanced ages in these stars is notable....
+5. CIV 1549 as an Eigenvector 1 Parameter for Active Galactic Nuclei
+   score=0.7691 | chunk=2.0 | category=astro-ph | year=2007.0
+   equivalent width of CIV 1549. They are seen only in Pop. A sources. CIV 1549 measures enhance the apparent dichotomy at FWHM(Hbeta BC) approx. 4000 \kms\ (Sulentic et al. 2000) suggesting that it has more significance in the context of Broad Line Region structure than the more commonly discussed RL vs. RQ dichotomy. Black hole masses computed from ...
+
+Semantic chunks search: machine learning methods for scientific data
+1. Geochemistry of U and Th and its Influence on the Origin and Evolution of the Crust of Earth and the Biological Evolution
+   score=0.7905 | chunk=2.0 | category=physics.geo-ph | year=2007.0
+   We propose that since the Earth and planets were born in a united solar system, there should be some common mechanisms to create the similarities and differences between them. We have tried to develop an integrated view to explain some problems in the tectonics of Earth and evolution, bio-evolution, and planetary dynamics through U and Th geochemis...
+2. CIV 1549 as an Eigenvector 1 Parameter for Active Galactic Nuclei
+   score=0.7719 | chunk=0.0 | category=astro-ph | year=2007.0
+   [Abridged] We have been exploring a spectroscopic unification for all known types of broad line emitting AGN. The 4D Eigenvector 1 (4DE1) parameter space shows promise as a unification capable of organizing quasar diversity on a sequence primarily governed by Eddington ratio. This paper considers the role of CIV 1549 measures with special emphasis ...
+3. Dark matter in the Milky Way, II. the HI gas distribution as a tracer of the gravitational potential
+   score=0.7688 | chunk=0.0 | category=astro-ph | year=2007.0
+   Context. Gas within a galaxy is forced to establish pressure balance against gravitational forces. The shape of an unperturbed gaseous disk can be used to constrain dark matter models. Aims. We derive the 3-D HI volume density distribution for the Milky Way out to a galactocentric radius of 40 kpc and a height of 20 kpc to constrain the Galactic ma...
+4. Observations towards early-type stars in the ESO-POP survey: II -- searches for intermediate and high velocity clouds
+   score=0.7681 | chunk=3.0 | category=astro-ph | year=2007.0
+   The non-detection of CaII K absorption sets a lower distance of 3.2-kpc towards the HVC, which is unsurprising if this feature is indeed related to the Magellanic System....
+5. CIV 1549 as an Eigenvector 1 Parameter for Active Galactic Nuclei
+   score=0.7660 | chunk=2.0 | category=astro-ph | year=2007.0
+   Black hole masses computed from FWHM CIV 1549 BC for about 80 AGN indicate that the CIV 1549 width is a poor virial estimator. Comparison of mass estimates derived from Hbeta BC and CIV 1549 reveals that the latter show different and nonlinear offsets for population A and B sources. A significant number of sources also show narrow line CIV 1549 emi...

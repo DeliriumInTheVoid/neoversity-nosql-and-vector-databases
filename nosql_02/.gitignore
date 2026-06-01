@@ -1,0 +1,6 @@
+.venv/
+.env
+pinecone.txt
+data/
+embeddings/
+assets/specter2_base
