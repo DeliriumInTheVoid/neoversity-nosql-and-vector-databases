@@ -1,0 +1,75 @@
+graphName, nodeCount, relationshipCount
+"movieGraph", 3883, 100000
+movieId, title, year, pageRank, ratingCount, avgRating
+2858, "American Beauty", 1999, 9.65881, 3428, 4.32
+260, "Star Wars: Episode IV - A New Hope", 1977, 9.1363, 2991, 4.45
+1196, "Star Wars: Episode V - The Empire Strikes Back", 1980, 9.10046, 2990, 4.29
+1198, "Raiders of the Lost Ark", 1981, 7.93851, 2514, 4.48
+608, "Fargo", 1996, 7.0317, 2513, 4.25
+593, "Silence of the Lambs, The", 1991, 6.71422, 2578, 4.35
+858, "Godfather, The", 1972, 6.31397, 2223, 4.52
+318, "Shawshank Redemption, The", 1994, 6.29481, 2227, 4.55
+2571, "Matrix, The", 1999, 6.28761, 2590, 4.32
+2762, "Sixth Sense, The", 1999, 6.24588, 2459, 4.41
+2028, "Saving Private Ryan", 1998, 6.02702, 2653, 4.34
+1270, "Back to the Future", 1985, 5.80023, 2583, 3.99
+1210, "Star Wars: Episode VI - Return of the Jedi", 1983, 5.60039, 2883, 4.02
+527, "Schindler's List", 1993, 5.5787, 2304, 4.51
+1197, "Princess Bride, The", 1987, 5.46059, 2318, 4.3
+589, "Terminator 2: Judgment Day", 1991, 5.4391, 2649, 4.06
+1617, "L.A. Confidential", 1997, 5.41051, 2288, 4.22
+296, "Pulp Fiction", 1994, 5.39742, 2171, 4.28
+110, "Braveheart", 1995, 4.96255, 2443, 4.23
+1240, "Terminator, The", 1984, 4.84169, 2098, 4.15
+action, graphName
+"Dropped projection", "movieGraph"
+graphName, nodeCount, relationshipCount
+"userSimilarity", 6040, 60000
+communityCount, modularity, modularities, ranLevels, nodePropertiesWritten
+4716, 0.1892, [0.1884179945039679, 0.1892388700752173], 2, 6040
+communityId, userCount
+3791, 406
+4168, 379
+1834, 251
+1745, 163
+5183, 130
+6, 1
+5, 1
+2, 1
+4, 1
+8, 1
+communityId, userCount, topGenres
+3791, 406, [{genre: "Comedy", highRatings: 32663}, {genre: "Drama", highRatings: 30911}, {genre: "Action", highRatings: 28831}]
+4168, 379, [{genre: "Drama", highRatings: 40316}, {genre: "Comedy", highRatings: 26876}, {genre: "Thriller", highRatings: 13291}]
+1834, 251, [{genre: "Drama", highRatings: 19908}, {genre: "Comedy", highRatings: 14319}, {genre: "Action", highRatings: 10472}]
+1745, 163, [{genre: "Comedy", highRatings: 16098}, {genre: "Drama", highRatings: 13911}, {genre: "Action", highRatings: 7990}]
+5183, 130, [{genre: "Drama", highRatings: 19642}, {genre: "Comedy", highRatings: 15346}, {genre: "Action", highRatings: 7484}]
+2, 1, [{genre: "Adventure", highRatings: 21}, {genre: "Comedy", highRatings: 19}, {genre: "Action", highRatings: 18}]
+4, 1, [{genre: "Drama", highRatings: 42}, {genre: "Comedy", highRatings: 29}, {genre: "Thriller", highRatings: 13}]
+5, 1, [{genre: "Romance", highRatings: 25}, {genre: "Comedy", highRatings: 21}, {genre: "Musical", highRatings: 16}]
+6, 1, [{genre: "Action", highRatings: 24}, {genre: "Thriller", highRatings: 14}, {genre: "Sci-Fi", highRatings: 9}]
+8, 1, [{genre: "Drama", highRatings: 36}, {genre: "Comedy", highRatings: 19}, {genre: "Thriller", highRatings: 18}]
+action, graphName
+"Dropped projection", "userSimilarity"
+graphName, nodeCount, relationshipCount
+"userGraph", 6040, 60000
+sourceUserId, targetUserId, hopCount, intermediateUsers, totalDistance, pathUsers, cumulativeCosts
+36, 65, 3, 2, 0.0806, [36, 4277, 3032, 65], [0.0, 0.0233, 0.0352, 0.0806]
+sourceUserId, targetUserId, hopCount, totalDistance, pathUsers
+53, 58, 1, 0.0208, [53, 58]
+10, 346, 1, 0.0385, [10, 346]
+58, 187, 2, 0.0447, [58, 4277, 187]
+10, 18, 2, 0.0498, [10, 5100, 18]
+81, 307, 2, 0.0546, [81, 5100, 307]
+27, 307, 2, 0.0603, [27, 4169, 307]
+36, 198, 2, 0.068, [36, 3391, 198]
+17, 33, 2, 0.0747, [17, 4277, 33]
+33, 183, 2, 0.0789, [33, 4277, 183]
+65, 198, 2, 0.0889, [65, 3032, 198]
+17, 183, 2, 0.0911, [17, 4277, 183]
+36, 65, 3, 0.0806, [36, 4277, 3032, 65]
+27, 81, 3, 0.0917, [27, 4169, 5100, 81]
+connectedPairs, avgHopCount, minHopCount, maxHopCount, avgDistance
+13, 2.0, 1, 3, 0.0648
+action, graphName
+"Dropped projection", "userGraph"
